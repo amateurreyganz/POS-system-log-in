@@ -225,11 +225,18 @@ function checkout(){
         "\nChange: ₱" + change.toFixed(2)
     );
 
-    cart = [];
+    // Save transaction to Sales History
+saveHistory(
+    cart.reduce((text, item) => text + item.name + " (" + item.qty + "), ", ""),
+    grandTotal
+);
 
-    updateCart();
+// Clear cart
+cart = [];
 
-    document.getElementById("cash").value = "";
+updateCart();
+
+document.getElementById("cash").value = "";
 
 }
 
@@ -299,5 +306,7 @@ window.onload = function(){
     }
 
     updateCart();
+
+    loadHistory();
 
 };
