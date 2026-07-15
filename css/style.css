@@ -674,3 +674,15 @@ table{
 }
 
 }
+
+.sidebar ul li a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+.sidebar ul li a:hover{
+    color:white;
+}
