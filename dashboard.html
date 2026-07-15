@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ganzon's Smart POS Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h2>🛒 Ganzon's POS</h2>
+
+        <p>Version 2.0</p>
+
+    </div>
+
+    <ul>
+
+        <li class="active">🏠 Dashboard</li>
+        <li>💳 Cashier</li>
+        <li>📦 Inventory</li>
+        <li>📈 Sales</li>
+        <li>📊 Reports</li>
+        <li>👥 Customers</li>
+        <li>⚙ Settings</li>
+
+    </ul>
+
+</div>
+
+<div class="main">
+
+<header>
+
+<div>
+
+<h1>Dashboard</h1>
+
+<p id="welcome"></p>
+
+</div>
+
+<button class="logout" onclick="logout()">
+
+Logout
+
+</button>
+
+</header>
+
+<div class="cards">
+
+<div class="card">
+
+<h4>Total Sales</h4>
+
+<h2>
+
+₱<span id="sales">0</span>
+
+</h2>
+
+<p>Today's Sales</p>
+
+</div>
+
+<div class="card">
+
+<h4>Total Profit</h4>
+
+<h2>
+
+₱<span id="profit">0</span>
+
+</h2>
+
+<p>Estimated Profit</p>
+
+</div>
+
+<div class="card">
+
+<h4>Products</h4>
+
+<h2 id="productCount">
+
+8
+
+</h2>
+
+<p>Available Products</p>
+
+</div>
+
+<div class="card">
+
+<h4>Items Sold</h4>
+
+<h2 id="items">
+
+0
+
+</h2>
+
+<p>Today's Items</p>
+
+</div>
+
+</div>
+
+<section class="products-section">
+
+<div class="section-title">
+
+<h2>Products</h2>
+
+</div>
+
+<div class="toolbar">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search product..."
+
+onkeyup="searchProducts()">
+
+<select>
+
+<option>All</option>
+
+<option>Drinks</option>
+
+<option>Snacks</option>
+
+</select>
+
+</div>
+
+<div class="products" id="products">
+
+<div class="product">
+
+<img src="images/coke.png">
+
+<h3>Coca Cola</h3>
+
+<p>₱30</p>
+
+<button onclick="addProduct('Coca Cola',30,12)">
+
+Add
+
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/pepsi.png">
+
+<h3>Pepsi</h3>
+
+<p>₱30</p>
+
+<button onclick="addProduct('Pepsi',30,12)">
+
+Add
+
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/sprite.png">
+
+<h3>Sprite</h3>
+
+<p>₱30</p>
+
+<button onclick="addProduct('Sprite',30,12)">
+
+Add
+
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/royal.png">
+
+<h3>Royal</h3>
+
+<p>₱30</p>
+
+<button onclick="addProduct('Royal',30,12)">
+
+Add
+
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/lays.png">
+
+<h3>Lays</h3>
+
+<p>₱65</p>
+
+<button onclick="addProduct('Lays',65,25)">
+
+Add
+
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/oreo.png">
+
+<h3>Oreo</h3>
+
+<p>₱20</p>
+
+<button onclick="addProduct('Oreo',20,8)">
+
+Add
+
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/pringles.png">
+
+<h3>Pringles</h3>
+
+<p>₱120</p>
+
+<button onclick="addProduct('Pringles',120,55)">
+
+Add
+
+</button>
+
+</div>
+
+<div class="product">
+
+<img src="images/water.png">
+
+<h3>Mineral Water</h3>
+
+<p>₱20</p>
+
+<button onclick="addProduct('Mineral Water',20,7)">
+
+Add
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cart-section">
+
+<h2>
+
+🛒 Shopping Cart
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+
+<th>Qty</th>
+
+<th>Price</th>
+
+<th>Total</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="cart">
+
+</tbody>
+
+</table>
+
+<div class="checkout">
+
+<h2>
+
+Total :
+₱<span id="total">0</span>
+
+</h2>
+
+<input
+
+type="number"
+
+id="cash"
+
+placeholder="Cash Tendered">
+
+<button onclick="checkout()">
+
+Checkout
+
+</button>
+
+<h2>
+
+Change :
+₱<span id="change">0</span>
+
+</h2>
+
+</div>
+
+</section>
+
+<section class="summary">
+
+<div class="summary-card">
+
+<h3>
+
+Sales Summary
+
+</h3>
+
+<div class="summary-item">
+
+<span>
+
+Subtotal
+
+</span>
+
+<span>
+
+₱<span id="subtotal">0</span>
+
+</span>
+
+</div>
+
+<div class="summary-item">
+
+<span>
+
+VAT (12%)
+
+</span>
+
+<span>
+
+₱<span id="vat">0</span>
+
+</span>
+
+</div>
+
+<div class="summary-item">
+
+<b>
+
+Grand Total
+
+</b>
+
+<b>
+
+₱<span id="grandTotal">0</span>
+
+</b>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Ganzon's Smart POS System
+
+</p>
+
+</footer>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

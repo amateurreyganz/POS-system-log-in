@@ -41,7 +41,7 @@ loginForm.addEventListener("submit", function (e) {
 
     // Demo Accounts
 
-    if (username === "admin" && pass === "123456") {
+    if (username === "your name" && pass === "secret") {
 
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("role", "Admin");
