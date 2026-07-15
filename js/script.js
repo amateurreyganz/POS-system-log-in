@@ -310,3 +310,28 @@ window.onload = function(){
     loadHistory();
 
 };
+// ===============================
+// Settings Functions
+// ===============================
+
+function clearSales(){
+
+    if(confirm("Are you sure you want to clear all sales data?")){
+
+        localStorage.removeItem("salesHistory");
+
+        alert("Sales history has been cleared.");
+
+    }
+
+}
+
+function resetInventory(){
+
+    if(confirm("Reset inventory to default?")){
+
+        alert("Inventory has been reset.");
+
+    }
+
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customers | Ganzon's Smart POS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h2>🛒 Ganzon's POS</h2>
+
+        <p>Version 2.0</p>
+
+    </div>
+
+    <ul>
+
+        <li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+        <li><a href="cashier.html">💳 Cashier</a></li>
+
+        <li><a href="inventory.html">📦 Inventory</a></li>
+
+        <li><a href="sales.html">📈 Sales</a></li>
+
+        <li><a href="reports.html">📊 Reports</a></li>
+
+        <li class="active"><a href="customers.html">👥 Customers</a></li>
+
+        <li><a href="settings.html">⚙ Settings</a></li>
+
+    </ul>
+
+</div>
+
+<div class="main">
+
+<header>
+
+<div>
+
+<h1>👥 Customers</h1>
+
+<p>Customer Information</p>
+
+</div>
+
+<button class="logout" onclick="logout()">
+
+Logout
+
+</button>
+
+</header>
+
+<div class="card">
+
+<h2>Add Customer</h2>
+
+<br>
+
+<input
+type="text"
+id="customerName"
+placeholder="Customer Name"
+style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;">
+
+<br><br>
+
+<input
+type="text"
+id="customerPhone"
+placeholder="Phone Number"
+style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;">
+
+<br><br>
+
+<button
+onclick="addCustomer()"
+style="padding:12px 25px;background:#2563eb;color:white;border:none;border-radius:8px;cursor:pointer;">
+
+Add Customer
+
+</button>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h2>Customer List</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Name</th>
+
+<th>Phone</th>
+
+</tr>
+
+</thead>
+
+<tbody id="customerTable">
+
+<tr>
+
+<td>1</td>
+
+<td>Juan Dela Cruz</td>
+
+<td>09123456789</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>Maria Santos</td>
+
+<td>09987654321</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 Ganzon's Smart POS System
+
+</p>
+
+</footer>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

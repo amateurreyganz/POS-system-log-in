@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Ganzon's Smart POS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h2>🛒 Ganzon's POS</h2>
+
+        <p>Version 2.0</p>
+
+    </div>
+
+    <ul>
+
+        <li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+        <li><a href="cashier.html">💳 Cashier</a></li>
+
+        <li><a href="inventory.html">📦 Inventory</a></li>
+
+        <li><a href="sales.html">📈 Sales</a></li>
+
+        <li><a href="reports.html">📊 Reports</a></li>
+
+        <li><a href="customers.html">👥 Customers</a></li>
+
+        <li class="active"><a href="settings.html">⚙ Settings</a></li>
+
+    </ul>
+
+</div>
+
+<div class="main">
+
+<header>
+
+<div>
+
+<h1>⚙ Settings</h1>
+
+<p>Manage your POS preferences</p>
+
+</div>
+
+<button class="logout" onclick="logout()">
+
+Logout
+
+</button>
+
+</header>
+
+<div class="card">
+
+<h2>System Information</h2>
+
+<br>
+
+<p><b>System Name:</b> Ganzon's Smart POS</p>
+
+<br>
+
+<p><b>Version:</b> 2.0</p>
+
+<br>
+
+<p><b>Developer:</b> Reymark Ganzon</p>
+
+<br>
+
+<p><b>Status:</b> <span style="color:green;">Running</span></p>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h2>Quick Actions</h2>
+
+<br>
+
+<button onclick="clearSales()"
+style="padding:12px 25px;background:#ef4444;color:white;border:none;border-radius:8px;cursor:pointer;">
+
+Clear Sales Data
+
+</button>
+
+<br><br>
+
+<button onclick="resetInventory()"
+style="padding:12px 25px;background:#2563eb;color:white;border:none;border-radius:8px;cursor:pointer;">
+
+Reset Inventory
+
+</button>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 Ganzon's Smart POS System
+
+</p>
+
+</footer>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
